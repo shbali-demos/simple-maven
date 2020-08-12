@@ -30,16 +30,12 @@ spec:
                 container('maven') {
                     sh 'mvn -version'
                 }
+            }
+        }
+        stage('Run busybox') {
+            steps {
                 container('busybox') {
-                   script{
-                       try {
-                           sh 'exit 1'
-                       }
-                       catch (exc){
-                           echo 'somthing failed'
-
-                       }
-                   }
+                    sh 'ls -lart'
                 }
             }
         }
