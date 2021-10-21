@@ -31,6 +31,7 @@ spec:
             steps {
                 container('maven') {
                     sh 'mvn -version'
+                    helloWorld("Sara", "Friday")
                 }
                 container('busybox') {
                    script{
